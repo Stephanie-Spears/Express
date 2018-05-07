@@ -255,7 +255,7 @@ input {
     position: absolute;
     bottom: 10px;
     left: 20px;
-    padding-left: 500px:
+    padding-left: 500px;
 }
 
 .card-flip {
@@ -277,7 +277,7 @@ input {
     bottom: 25px;
     right: 20px;
     text-align: center;
-    padding-top: 0px;
+    padding-top: 0;
 }
 .card-next img {
     max-width: 30px;
@@ -316,9 +316,8 @@ input {
     text-align: left;
     color: #34393D;
     height: 500px;
-    background-color: #f8f8f8;
     background-size: 100% 2.5em;
-    background-image: linear-gradient(rgba(234, 236, 211, 1) 0.1em, transparent 0.2em);
+    background: #f8f8f8 linear-gradient(rgba(234, 236, 211, 1) 0.1em, transparent 0.2em);
     border-left: 0.2em solid rgba(216, 64, 38, 0.5);
     padding-left: 20px;
     margin-top: 70px;
@@ -330,15 +329,13 @@ input {
     line-height: 3.15em;
     white-space: pre-wrap;       /* css-3 */
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-    white-space: -pre-wrap;      /* Opera 4-6 */
     white-space: -o-pre-wrap;    /* Opera 7 */
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
     margin-top: 0;
 }
 
 .tear {
-    background-image: url("../img/tear.svg");
-    background-repeat: repeat-x;
+    background: url("../img/tear.svg") repeat-x;
     width: 100%;
     height: 24px;
 }

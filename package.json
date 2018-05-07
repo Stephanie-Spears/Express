@@ -1,7 +1,7 @@
 {
   "name": "Express",
   "version": "1.0.0",
-  "description": "My Express App",
+  "description": "My Express Flashcard App",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

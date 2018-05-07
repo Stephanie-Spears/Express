@@ -1,3 +1,5 @@
+//next signals the end of the middleware function. Express relies on teh next function to know when to move forward, ie when a middleware function is done. If it isn't given, it will hang indefinitely. You must end middleware by either calling next or sending a response.
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -9,37 +11,11 @@ app.use(cookieParser());
 
 app.set('view engine', 'pug');
 
-app.get('/', (req, res) => {
-	const name = req.cookies.username;
-	if (name) {
-		res.render('index', { name });
-	} else {
-		res.redirect('/hello');
-	}
-});
+const mainRoutes = require('./routes');
+const cardRoutes = require('./routes/cards');
 
-app.get('/cards', (req, res) => {
-	res.render('card', { prompt: "Who is buried in Grant's tomb?" });
-});
-
-app.get('/hello', (req, res) => {
-	const name = req.cookies.username;
-	if (name) {
-		res.redirect('/');
-	} else {
-		res.render('hello');
-	}
-});
-
-app.post('/hello', (req, res) => {
-	res.cookie('username', req.body.username);
-	res.redirect('/');
-});
-
-app.post('/goodbye', (req, res) => {
-	res.clearCookie('username');
-	res.redirect('/hello');
-});
+app.use(mainRoutes);
+app.use('/cards', cardRoutes);
 
 app.use((req, res, next) => {
 	const err = new Error('Not Found');

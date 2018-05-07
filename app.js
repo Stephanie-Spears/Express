@@ -39,12 +39,12 @@ ghpages.publish('/dist', function(err) {
 });
 
 
-// const http = require('http');
-// const port = process.env.PORT || 3000;
-//
-// http.createServer(function(req, res){
-// 	res.writeHead(200, {'Content-Type': 'text/plain'});
-// 	res.end('Hello Heroku\n');
-// }).listen(port, function(){
-// 	console.log("Server running at http://" + port + "/");
-// });
+const http = require('http');
+const port = process.env.PORT || 3000;
+
+http.createServer(function(req, res){
+	res.writeHead(200, {'Content-Type': 'text/plain'});
+	res.end('Hello Heroku\n');
+}).listen(port, function(){
+	console.log("Server running at http://" + port + "/");
+});

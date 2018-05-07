@@ -5,14 +5,14 @@ const cookieParser = require('cookie-parser');
 const app = express();
 
 
-
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(cookieParser());
 
 app.set('view engine', 'pug');
 
 app.get('/', (req, res) => {
-	res.render('index');
+	const name = req.cookies.username;
+	res.render('index', { name });
 });
 
 app.get('/cards', (req, res) => {
@@ -20,12 +20,12 @@ app.get('/cards', (req, res) => {
 });
 
 app.get('/hello', (req, res) => {
-	res.render('hello', { name: req.cookies.username });
+	res.render('hello');
 });
 
 app.post('/hello', (req, res) => {
 	res.cookie('username', req.body.username);
-	res.render('hello', { name: req.body.username });
+	res.redirect('/');
 });
 
 app.listen(3000, () => {

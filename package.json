@@ -14,13 +14,10 @@
     "url": "git+https://github.com/Stephanie-Spears/Express.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Stephanie Spears",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Stephanie-Spears/Express/issues"
-  },
-  "homepage": "https://github.com/Stephanie-Spears/Express#readme",
-  "devDependencies": {
-    "express": "^4.16.3"
+  "dependencies": {
+    "express": "^4.16.3",
+    "pug": "^2.0.3"
   }
 }

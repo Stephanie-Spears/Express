@@ -1,4 +1,3 @@
-//next signals the end of the middleware function. Express relies on teh next function to know when to move forward, ie when a middleware function is done. If it isn't given, it will hang indefinitely. You must end middleware by either calling next or sending a response.
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -7,6 +6,7 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(cookieParser());
+app.use('/static', express.static('public'));
 
 app.set('view engine', 'pug');
 

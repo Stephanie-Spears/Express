@@ -2,7 +2,7 @@
   "name": "Express",
   "version": "1.0.0",
   "description": "My Express Flashcard App",
-  "main": "app.js",
+  "main": "app.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "gh-pages -d dist"

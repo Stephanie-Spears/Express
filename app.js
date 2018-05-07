@@ -34,7 +34,7 @@ app.listen(3000, () => {
 
 const ghpages = require('gh-pages');
 
-ghpages.publish('/', function(err) {
+ghpages.publish('/Express', function(err) {
 
 });
 
